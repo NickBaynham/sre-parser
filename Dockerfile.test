@@ -7,8 +7,8 @@ WORKDIR /go/src/github/mlabouardy/movies-parser
 
 
 RUN wget $LINK -O nancy
-chmod +x nancy
-mv nancy /usr/local/bin/nancy
+RUN chmod +x nancy
+RUN mv nancy /usr/local/bin/nancy
 RUN go get -u golang.org/x/lint/golint
 
 COPY . .
