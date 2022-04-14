@@ -5,7 +5,7 @@ ENV GOCACHE /tmp
 ENV LINK /usr/local/bin/nancy https://github.com/sonatype-nexus-community/nancy/releases/download/v0.1.17/nancy-linux.amd64-v0.1.17
 WORKDIR /go/src/github/mlabouardy/movies-parser
 
-RUN wget ${LINK} -O nancy
+RUN wget /usr/local/bin/nancy https://github.com/sonatype-nexus-community/nancy/releases/download/v0.1.17/nancy-linux.amd64-v0.1.17 -O nancy
 RUN chmod +x nancy
 RUN mv nancy /usr/local/bin/nancy
 RUN go get -u golang.org/x/lint/golint
