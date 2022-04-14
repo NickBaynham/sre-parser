@@ -12,4 +12,12 @@ docker run parser:latest
 ## Troubleshoot
 ```
 docker container run -it parser /bin/bash
+cd /go/src/github/mlabouardy/movies-parser
+LINK=" /usr/local/bin/nancy https://github.com/sonatype-nexus-community/nancy/releases/download/v0.1.17/nancy-linux.amd64-v0.1.17"
+wget $LINK -O nancy
+chmod +x nancy
+go get -u golang.org/x/lint/golint
+go get -v
+nancy /go/src/github/mlabouardy/movies-parser/Gopkg.lock
+exit
 ```
